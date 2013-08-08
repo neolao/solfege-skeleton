@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+var sf              = require('solfegejs');
+var Application     = sf.require('Component.Console.Application');
+var ArgvInput       = sf.require('Component.Console.Input.ArgvInput');
+
+
+var input = new ArgvInput();
+var application = new Application('Solfege', sf.version);
+application.run(input);
