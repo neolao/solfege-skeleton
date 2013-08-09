@@ -1,10 +1,18 @@
 #!/usr/bin/env node
 
-var sf              = require('solfegejs');
-var Application     = sf.require('Component.Console.Application');
-var ArgvInput       = sf.require('Component.Console.Input.ArgvInput');
+var cjson       = require('cjson');
+var sf          = require('solfegejs');
+var Application = require('solfegejs/lib/Component/Kernel/Application');
+var Cli         = require('solfegejs/lib/Component/Console/Application');
+var ArgvInput   = require('solfegejs/lib/Component/Console/Input/ArgvInput');
 
+// Initialize the application
+var application = new Application();
+application.loadConfiguration('./config');
 
+//  Initialize the command line inteface
+var cli = new Cli('Solfege', sf.version);
+
+// Run the command line inteface
 var input = new ArgvInput();
-var application = new Application('Solfege', sf.version);
-application.run(input);
+cli.run(input);
