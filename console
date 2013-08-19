@@ -1,17 +1,27 @@
 #!/usr/bin/env node
 
 var cjson       = require('cjson');
+var path        = require('path');
 var sf          = require('solfegejs');
 var Application = require('solfegejs/lib/Component/Kernel/Application');
 var Cli         = require('solfegejs/lib/Component/Console/Application');
 var ArgvInput   = require('solfegejs/lib/Component/Console/Input/ArgvInput');
 
 // Initialize the application
-var application = new Application();
+var rootDirectory = __dirname;
+var application = new Application(rootDirectory);
 application.loadConfiguration('./config');
 
-//  Initialize the command line inteface
+// Initialize the command line inteface
 var cli = new Cli('Solfege', sf.version);
+
+// Add the commands from the bundles
+var bundles = application.getBundles();
+for (var bundleIndex in bundles) {
+    var bundle = bundles[bundleIndex];
+    var bundleCommands = bundle.getConsoleCommands();
+    cli.addCommands(bundle.getName(), bundleCommands);
+}
 
 // Run the command line inteface
 var input = new ArgvInput();

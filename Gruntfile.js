@@ -7,12 +7,10 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
         typescript: {
             build: {
-                src: ['src/**/*.ts'],
-                dest: 'build',
+                src: ['bundles/**/*.ts'],
                 options: {
                     module: 'Node',
                     target: 'ES5',
-                    base_path: 'src',
                     sourcemap: false,
                     fullSourceMapPath: false,
                     declaration: false,
