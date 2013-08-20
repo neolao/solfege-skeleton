@@ -1,4 +1,11 @@
 {
+    // Web server
+    "server":
+    {
+        "port": 9000
+    },
+
+    // Bundle list
     "bundles":
     [
         "{{solfege.bundle_dir}}/Server/ServerBundle",
