@@ -2,3 +2,4 @@ node_modules
 e_modules
 
 /config/config.json
+/config/config_prod.json
