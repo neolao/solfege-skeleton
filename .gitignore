@@ -3,3 +3,5 @@ e_modules
 
 /config/config.json
 /config/config_prod.json
+/config/routing.json
+/logs
