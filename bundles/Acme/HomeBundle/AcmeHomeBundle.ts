@@ -14,7 +14,7 @@ class AcmeHomeBundle extends Bundle
      */
     constructor()
     {
-        super();
+        super(__dirname);
     }
 }
 

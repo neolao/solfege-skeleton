@@ -9,7 +9,7 @@ var Bundle = require('../../../node_modules/solfegejs/lib/Component/Kernel/Bundl
 var AcmeHomeBundle = (function (_super) {
     __extends(AcmeHomeBundle, _super);
     function AcmeHomeBundle() {
-        _super.call(this);
+        _super.call(this, __dirname);
     }
     return AcmeHomeBundle;
 })(Bundle);
